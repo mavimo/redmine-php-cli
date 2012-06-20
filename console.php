@@ -29,15 +29,15 @@ $console
       new InputArgument('host',     InputArgument::REQUIRED, 'Redmine host name. Add trailing slash'),
       new InputArgument('user',     InputArgument::REQUIRED, 'User authentication username'),
       new InputArgument('password', InputArgument::REQUIRED, 'User authentication password'),
-      new InputArgument('project',  InputArgument::OPTIONAL, 'Limit to a specific project',  ''),
+      new InputArgument('project',  InputArgument::OPTIONAL, 'Limit to a specific project', NULL),
     ))
   ->setDescription('List issues.')
   ->setHelp('
 The <info>issues:list</info> command will list all issues.
 
 <comment>Samples:</comment>
-  To run with default options:
-    <info>php console.php issues:list</info>')
+  To run:
+    <info>php console.php issues:list http://<question>HOSTNAME</question>/ <question>USERNAME</question> <question>PASSWORD</question></info>')
   ->setCode(function (InputInterface $input, OutputInterface $output) {
     $host = $input->getArgument('host');
     $user = $input->getArgument('user');
